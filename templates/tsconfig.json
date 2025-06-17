@@ -1,0 +1,103 @@
+{
+  "compilerOptions": {
+    // ターゲット・モジュール設定
+    "target": "ES2020",
+    "lib": ["ES2020", "DOM", "DOM.Iterable"],
+    "module": "ESNext",
+    "skipLibCheck": true,
+
+    // モジュール解決
+    "moduleResolution": "bundler",
+    "allowImportingTsExtensions": true,
+    "resolveJsonModule": true,
+    "isolatedModules": true,
+    "noEmit": true,
+    "jsx": "react-jsx",
+
+    // 型チェック厳格化
+    "strict": true,
+    "noUnusedLocals": true,
+    "noUnusedParameters": true,
+    "noFallthroughCasesInSwitch": true,
+    "noImplicitReturns": true,
+    "noImplicitAny": true,
+    "noImplicitThis": true,
+    "strictNullChecks": true,
+    "strictFunctionTypes": true,
+    "strictBindCallApply": true,
+    "strictPropertyInitialization": true,
+    "noImplicitOverride": true,
+    "noPropertyAccessFromIndexSignature": true,
+    "noUncheckedIndexedAccess": true,
+
+    // その他の厳格な設定
+    "exactOptionalPropertyTypes": true,
+    "useDefineForClassFields": true,
+
+    // パス設定
+    "baseUrl": ".",
+    "paths": {
+      "@/*": ["./src/*"],
+      "@/core/*": ["./src/core/*"],
+      "@/infrastructure/*": ["./src/infrastructure/*"],
+      "@/application/*": ["./src/application/*"],
+      "@/presentation/*": ["./src/presentation/*"],
+      "@/shared/*": ["./src/shared/*"],
+      "@/test/*": ["./src/test/*"]
+    },
+
+    // 型生成・インポート設定
+    "allowSyntheticDefaultImports": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "verbatimModuleSyntax": false,
+
+    // デコレーター（将来拡張用）
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+
+    // ソースマップ
+    "sourceMap": true,
+    "inlineSources": false,
+    "declaration": false,
+    "declarationMap": false,
+
+    // インクリメンタルコンパイル
+    "incremental": true,
+    "tsBuildInfoFile": "./node_modules/.cache/typescript/tsbuildinfo"
+  },
+
+  // 含める・除外するファイル
+  "include": [
+    "src/**/*",
+    "src/**/*.ts",
+    "src/**/*.tsx",
+    "src/**/*.vue",
+    "vite.config.ts",
+    "vitest.config.ts"
+  ],
+  
+  "exclude": [
+    "node_modules",
+    "dist",
+    "build",
+    "coverage",
+    "**/*.test.ts",
+    "**/*.test.tsx",
+    "**/*.spec.ts",
+    "**/*.spec.tsx"
+  ],
+
+  // プロジェクト参照
+  "references": [
+    { "path": "./tsconfig.node.json" }
+  ],
+
+  // TypeScript ESLint設定
+  "ts-node": {
+    "esm": true,
+    "compilerOptions": {
+      "module": "ESNext"
+    }
+  }
+}
